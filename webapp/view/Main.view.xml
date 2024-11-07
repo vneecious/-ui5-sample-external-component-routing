@@ -1,7 +1,19 @@
-<mvc:View controllerName="my.routingexternalcomponent.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View
+    controllerName="my.routingexternalcomponent.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        showHeader="false"
+    >
+        <IllustratedMessage
+            enableVerticalResponsiveness="true"
+            title="Master Data Hub"
+            illustrationType="tnt-Settings"
+        >
+            <additionalContent />
+        </IllustratedMessage>
     </Page>
 </mvc:View>

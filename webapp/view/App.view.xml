@@ -1,7 +1,55 @@
-<mvc:View controllerName="my.routingexternalcomponent.controller.App"
+<mvc:View
+    controllerName="my.routingexternalcomponent.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    displayBlock="true"
+>
+    <tnt:ToolPage
+        id="toolPage"
+        sideExpanded="{appView>/sideBarExpanded}"
+    >
+        <tnt:sideContent>
+            <tnt:SideNavigation
+                itemSelect=".onItemSelect"
+                selectedItem="{appView>/selectedItem}"
+                selectedKey="main"
+            >
+                <tnt:NavigationList itemSelect="onItemSelect">
+                    <tnt:NavigationListItem
+                        text="Home"
+                        icon="sap-icon://home"
+                        enabled="true"
+                        expanded="false"
+                        key="RouteMain"
+                    />
+                    <tnt:NavigationListItem
+                        text="Calling external component"
+                        icon="sap-icon://course-program"
+                        enabled="true"
+                        expanded="false"
+                        key="RouteExternalComponent"
+                    />
+                </tnt:NavigationList>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <App>
+                <pages>
+                    <Page
+                        showFooter="false"
+                        showHeader="false"
+                        showNavButton="false"
+                    >
+                        <VBox>
+                            <App id="app" />
+                        </VBox>
+                    </Page>
+                </pages>
+            </App>
+        </tnt:mainContents>
+    </tnt:ToolPage>
 </mvc:View>

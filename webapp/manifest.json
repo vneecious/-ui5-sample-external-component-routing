@@ -45,6 +45,9 @@
       "compact": true,
       "cozy": true
     },
+    "resourceRoots": {
+      "sap.ushell.demo.FioriSandboxDefaultApp": "../test-resources/sap/ushell/demoapps/FioriSandboxDefaultApp/"
+    },
     "models": {
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
@@ -77,6 +80,13 @@
           "target": [
             "TargetMain"
           ]
+        },
+        {
+          "name": "RouteExternalComponent",
+          "pattern": "externalComponent",
+          "target": [
+            "TargetDefaultApp"
+          ]
         }
       ],
       "targets": {
@@ -86,6 +96,18 @@
           "clearControlAggregation": false,
           "viewId": "Main",
           "viewName": "Main"
+        },
+        "TargetDefaultApp": {
+          "type": "Component",
+          "name": "sap.ushell.demo.FioriSandboxDefaultApp",
+          "id": "defaultAppComponent",
+          "controlId": "app",
+          "controlAggregation": "pages",
+          "options": {
+            "settings": {
+              "id": "defaultAppInstance"
+            }
+          }
         }
       }
     },
